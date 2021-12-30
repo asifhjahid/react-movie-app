@@ -1,16 +1,17 @@
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import RestoreIcon from '@mui/icons-material/Restore';
+import MovieIcon from '@mui/icons-material/Movie';
+import SearchIcon from '@mui/icons-material/Search';
+import TvIcon from '@mui/icons-material/Tv';
+import WhatshotIcon from '@mui/icons-material/Whatshot';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import Box from '@mui/material/Box';
 import * as React from 'react';
+import NavStyle from '../style/Nav.styles';
 
 export default function Nav() {
   const [value, setValue] = React.useState(0);
 
   return (
-    <Box sx={{ width: '100%', position:'fixed',bottom:0 }}>
+    <NavStyle>
       <BottomNavigation
         showLabels
         value={value}
@@ -18,10 +19,23 @@ export default function Nav() {
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-        <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-        <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
+        <BottomNavigationAction 
+        label="Trending" 
+        icon={<WhatshotIcon />} 
+        />
+        <BottomNavigationAction 
+        label="Movies" 
+        icon={<MovieIcon />} 
+        />
+        <BottomNavigationAction 
+        label="Tv Series" 
+        icon={<TvIcon />} 
+        />
+        <BottomNavigationAction 
+        label="Search" 
+        icon={<SearchIcon />}     
+        />
       </BottomNavigation>
-    </Box>
+    </NavStyle>
   );
 }
