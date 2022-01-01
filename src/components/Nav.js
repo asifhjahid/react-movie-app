@@ -5,10 +5,21 @@ import WhatshotIcon from '@mui/icons-material/Whatshot';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import * as React from 'react';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import NavStyle from '../style/Nav.styles';
 
 export default function Nav() {
   const [value, setValue] = React.useState(0);
+  const navigate = useNavigate()
+
+    useEffect(() => {
+       if(value === 0) navigate('/')
+       else if(value === 1) navigate('/movies')
+       else if(value === 2) navigate('/tvSeries')
+       else if(value === 3) navigate('/search')
+      
+    },[value,navigate]);
 
   return (
     <NavStyle>

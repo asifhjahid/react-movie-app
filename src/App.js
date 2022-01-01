@@ -14,18 +14,19 @@ function App() {
   return (
     <Router>
     <div className="app">
+      <Header />
+      <Nav />
       <Container>
         <Routes>
           <Route exact path='/' element={<Trending />} />
           <Route path='/movies' element={<Movies/>} />
-          <Route path='/tVSeries' element={<TvSeries/>} />
+          <Route path='/tvSeries' element={<TvSeries/>} />
           <Route path='/search' element={<Search/>} />
         </Routes>
       </Container>
 
       <GlobalStyles />
-      <Header />
-      <Nav />
+     
     </div>
     </Router>
   );
